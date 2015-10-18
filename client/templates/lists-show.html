@@ -13,7 +13,7 @@
           <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
         </div>
 
-        <h1 class="js-edit-list title-page"><span class="title-wrapper">{{name}}</span> <span class="count-list">{{incompleteCount}}</span></h1>
+        <h1 class="title-page"><span class="title-wrapper">{{name}}</span> <span class="count-list">{{incompleteCount}}</span></h1>
 
         <div class="nav-group right">
           <div class="nav-item options-mobile">
@@ -28,24 +28,11 @@
             </select>
             <span class="icon-cog"></span>
           </div>
-          <div class="options-web">
-            <a class="js-toggle-list-privacy nav-item">
-              {{#if userId}}
-                <span class="icon-lock" title="Make list public"></span>
-              {{else}}
-                <span class="icon-unlock" title="Make list private"></span>
-              {{/if}}
-            </a>
-
-            <a class="js-delete-list nav-item">
-              <span class="icon-trash" title="Delete list"></span>
-            </a>
-          </div>
         </div>
       {{/if}}
 
       <form class="js-todo-new todo-new input-symbol">
-        <input type="text" placeholder="Type to add new tasks">
+        <input type="text" placeholder="What are your goals?">
         <span class="icon-add js-todo-add"></span>
       </form>
     </nav>
