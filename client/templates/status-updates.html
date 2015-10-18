@@ -1,0 +1,9 @@
+<template name="statusUpdates">
+<div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{#each thisArray}}
+        {{> yield}}
+      {{/each}}
+    </div>
+</template>

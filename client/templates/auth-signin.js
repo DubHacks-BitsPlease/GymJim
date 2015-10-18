@@ -37,10 +37,10 @@ Template.signin.events({
     
     Meteor.loginWithPassword(email, password, function(error) {
       if (error) {
-        return Session.set(ERRORS_KEY, {'none': error.reason});
+        return  Session.set(ERRORS_KEY, {'none': error.reason});
       }
 
-      if(Lists.find({userId: Meteor.userId(), name: "My Statuses"}).count() != 1) {
+      if(Lists.find({userId: Meteor.userId(), name: "My Statuses"}).count() < 1) {
           var statusList = {name: 'My Statuses', incompleteCount: 0};
           statusList._id = Lists.insert(statusList);
           Lists.update(statusList._id, {$set: {userId: Meteor.userId()}});
@@ -48,6 +48,12 @@ Template.signin.events({
 
       if(Lists.find({userId: Meteor.userId(), name: "My Goals"}).count() < 1) {
           var goalsList = {name: 'My Goals', incompleteCount: 0};
+          goalsList._id = Lists.insert(goalsList);
+          Lists.update(goalsList._id, {$set: {userId: Meteor.userId()}});
+      }
+
+      if(Lists.find({userId: Meteor.userId(), name: "My Friend's Goals"}).count() < 1) {
+          var goalsList = {name: "My Friend's Goals", incompleteCount: 0};
           goalsList._id = Lists.insert(goalsList);
           Lists.update(goalsList._id, {$set: {userId: Meteor.userId()}});
       }
