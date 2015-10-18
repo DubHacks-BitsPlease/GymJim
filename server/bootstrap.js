@@ -24,7 +24,7 @@ Meteor.startup(function () {
          "6502 Assembly"
          ]
       },
-      {name: "Favorite Scientists",
+      {name: "Ransum Pot",
        items: ["Ada Lovelace",
          "Grace Hopper",
          "Marie Curie",
