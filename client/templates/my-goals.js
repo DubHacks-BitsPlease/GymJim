@@ -1,4 +1,3 @@
-
 Template.myGoals.onRendered(function() {
   if (firstRender) {
     // Released in app-body.js

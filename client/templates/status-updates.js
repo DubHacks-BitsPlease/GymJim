@@ -7,3 +7,4 @@ Template.statusUpdates.helpers({
     return [this];
   }
 });
+
