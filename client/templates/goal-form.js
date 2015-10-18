@@ -1,5 +1,5 @@
 Template.goalForm.events({
-  
+
   'keydown input[type=text]': function(event) {
     // ESC
     if (27 === event.which) {
@@ -30,17 +30,18 @@ Template.goalForm.events({
   'submit .js-todo-new': function(event) {
     event.preventDefault();
 
-    var $input = $(event.target).find('[type=text]');
+    var $input = $(event.target).find('[type=number]');
     if (! $input.val())
       return;
 
     Todos.insert({
       listId: this._id,
-      text: $input.val(),
+      text: "I want to run " + $input.val() + " minutes a day.",
       checked: false,
       createdAt: new Date()
     });
     Lists.update(this._id, {$inc: {incompleteCount: 1}});
     $input.val('');
   }
+
 });
