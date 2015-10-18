@@ -1,11 +1,9 @@
 <template name="todosItem">
-  <div class="list-item {{checkedClass}} {{editingClass}}">
-    <label class="checkbox">
-      <input type="checkbox" checked="{{checked}}" name="checked">
-      <span class="checkbox-custom"></span>
-    </label>
+  <div class="list-item {{checkedClass}} {{editingClass}} row">
 
-    <span class="text">{{text}}</span>
-    <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
+    	<a class="btn btn-small yes" href="#"><i class="fa fa-chevron-up"></i></a>
+    	<span class="text pull-left col-sm-10" style = "text-align: left">{{text}}</span>
+		<a class="btn pull-right navbar-btn" href="#"> {{score}} </a>
+    
   </div>
 </template>
