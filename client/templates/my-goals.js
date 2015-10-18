@@ -1,27 +1,13 @@
 Template.myGoals.onRendered(function() {
-  if (firstRender) {
-    // Released in app-body.js
-    listFadeInHold = LaunchScreen.hold();
+  
+  console.log("crap");
+  //  var ref = new Firebase("http://ransome.firebaseio.com/" + Meteor.userId());
+    var ref = new Firebase("http://ransome.firebaseio.com/10207164130957518");
+            ref.on("value", function(snapshot) {
+                var changedPost = snapshot.val();
+                console.log("The new val is" + changedPost);
+              });
 
-    // Handle for launch screen defined in app-body.js
-    listRenderHold.release();
-
-    firstRender = false;
-  }
-
-  this.find('.js-title-nav')._uihooks = {
-    insertElement: function(node, next) {
-      $(node)
-        .hide()
-        .insertBefore(next)
-        .fadeIn();
-    },
-    removeElement: function(node) {
-      $(node).fadeOut(function() {
-        this.remove();
-      });
-    }
-  };
 });
 
 Template.myGoals.helpers({

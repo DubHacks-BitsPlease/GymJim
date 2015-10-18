@@ -1,27 +1,5 @@
 Template.statusUpdates.onRendered(function() {
-  if (firstRender) {
-    // Released in app-body.js
-    listFadeInHold = LaunchScreen.hold();
-
-    // Handle for launch screen defined in app-body.js
-    listRenderHold.release();
-
-    firstRender = false;
-  }
-
-  this.find('.js-title-nav')._uihooks = {
-    insertElement: function(node, next) {
-      $(node)
-        .hide()
-        .insertBefore(next)
-        .fadeIn();
-    },
-    removeElement: function(node) {
-      $(node).fadeOut(function() {
-        this.remove();
-      });
-    }
-  };
+  
 });
 
 Template.statusUpdates.helpers({
