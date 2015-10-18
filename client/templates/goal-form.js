@@ -37,6 +37,7 @@ Template.goalForm.events({
     Todos.insert({
       listId: this._id,
       text: $input.val(),
+      score: 0,
       checked: false,
       createdAt: new Date()
     });

@@ -1,19 +1,21 @@
 var EDITING_KEY = 'EDITING_TODO_ID';
 
 Template.todosItem.helpers({
-  checkedClass: function() {
-    return this.checked && 'checked';
-  },
   editingClass: function() {
     return Session.equals(EDITING_KEY, this._id) && 'editing';
+  },
+  todos: function() {
+    return Todos.find();
   }
 });
 
 Template.todosItem.events({
-  'change [type=checkbox]': function(event) {
-    var checked = $(event.target).is(':checked');
-    Todos.update(this._id, {$set: {checked: checked}});
-    Lists.update(this.listId, {$inc: {incompleteCount: checked ? -1 : 1}});
+  'click':function() {
+    Session.set('selected_goal', this._id);
+  },
+  'click a.yes':function() {
+    var goalId = Session.get('selected_goal');
+    Todos.update(goalId, {$inc: {'score': 1 }}); 
   },
   
   'focus input[type=text]': function(event) {

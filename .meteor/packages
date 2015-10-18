@@ -21,3 +21,5 @@ accounts-facebook
 service-configuration
 mrt:firebase
 biasport:facebook-sdk
+natestrauser:font-awesome
+mrt:bootstrap-3
