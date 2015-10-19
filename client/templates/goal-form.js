@@ -1,3 +1,4 @@
+dataPass = 999999;
 Template.goalForm.events({
 
   'keydown input[type=text]': function(event) {
@@ -35,12 +36,13 @@ Template.goalForm.events({
       return;
 
     Todos.insert({
-      listId: this._id,
+      listId: myListId,
       text: "I want to run " + $input.val() + " minutes a day.",
       checked: false,
       createdAt: new Date()
     });
     Lists.update(this._id, {$inc: {incompleteCount: 1}});
+    dataPass = $input.val();
     $input.val('');
   }
 

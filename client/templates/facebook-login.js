@@ -1,3 +1,4 @@
+myListId = -1;
 Template.flogin.events({
     'click #facebook-login': function(event) {
         Meteor.loginWithFacebook({}, function(err){
@@ -14,6 +15,7 @@ Template.flogin.events({
             if(Lists.find({userId: Meteor.userId(), name: "My Goals"}).count() < 1) {
                 var goalsList = {name: 'My Goals', incompleteCount: 0};
                 goalsList._id = Lists.insert(goalsList);
+                myListId = goalsList._id;
                 Lists.update(goalsList._id, {$set: {userId: Meteor.userId()}});
             }
 

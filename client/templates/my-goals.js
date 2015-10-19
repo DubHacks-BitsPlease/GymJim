@@ -5,7 +5,18 @@ Template.myGoals.onRendered(function() {
     var ref = new Firebase("http://ransome.firebaseio.com/10207164130957518");
             ref.on("value", function(snapshot) {
                 var changedPost = snapshot.val();
-                console.log("The new val is" + changedPost);
+
+                if(changedPost >= dataPass){
+                    
+                  
+                      Todos.insert({
+                        listId: myListId,
+                        text: Meteor.user().services.facebook.name + " ran for " +  changedPost  + " minutes today!",
+                        checked: false,
+                        createdAt: new Date()
+                      });
+                      Lists.update(this._id, {$inc: {incompleteCount: 1}});
+                    }
               });
 
 });
