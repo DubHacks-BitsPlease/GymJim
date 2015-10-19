@@ -1,5 +1,7 @@
 # RanSome
 
+http://gymjim.meteor.com/signin/
+
 RanSome will take some ransom from you if you do not run some.
 
 RanSome is an webapp for those whom find workout a hassle, however, realizes the importance of keeping fit and being healthy. This will keep you accountable, motivated and inspired to go the extra mile to take the first step and keep going. Goals are realistic for they are entered by you and as a daily event, keeping fit and healthy not only will become a daily event but a lifestyle.
